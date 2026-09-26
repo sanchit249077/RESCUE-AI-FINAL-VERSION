@@ -1,0 +1,15 @@
+{
+  "name": "RescueAI",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
+  "postCreateCommand": "npm install --no-audit --no-fund && npm --prefix server install --no-audit --no-fund",
+  "forwardPorts": [5173, 4000],
+  "portsAttributes": {
+    "5173": {"label": "RescueAI Frontend", "onAutoForward": "openPreview"},
+    "4000": {"label": "RescueAI API", "onAutoForward": "notify"}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"]
+    }
+  }
+}
